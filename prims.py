@@ -2,6 +2,7 @@ import sys
 def prim_mst(graph,v):
     selected=[False]*v 
     selected[0]=True
+     total_cost=0
     print("Edge\tWeight")
     
     for _ in range(v-1):
@@ -18,7 +19,9 @@ def prim_mst(graph,v):
                             x=i
                             y=j
         print(f"{x}-{y}\t{graph[x][y]}")
+         total_cost+=graph[x][y]
         selected[y]=True
+        print("\n totalcost",total_cost)
 graph =[
     [0,2,0,6,0],
     [2,0,3,8,5],
@@ -28,4 +31,5 @@ graph =[
 ]
 v=5
 prim_mst(graph,v)
+
                     
